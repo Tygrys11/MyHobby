@@ -1,0 +1,130 @@
+body
+{
+    background-image: url("bg-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@media(max-width: 999px)
+{
+    .sidebar
+    {
+        background: linear-gradient(to right,rgb(0, 10, 32), rgb(0, 0, 0),rgb(0, 10, 32));
+        box-shadow: 0px 0px 50px 10px rgb(0, 10, 32);
+        backdrop-filter: blur(30px);
+        border: none;
+    }
+
+    .nav-item
+    {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+        transition: 0.2s ease;
+    }
+
+    .nav-item.dropdown
+    {
+        color: white !important;
+        border-radius: 20px;
+        transition: 0.2s ease;
+    }
+
+    .nav-item.dropdown:hover 
+    {
+        box-shadow: -0px 0px 10px rgb(255, 255, 255) !important;
+    }
+
+    .nav-item:hover 
+    {
+        box-shadow: -0px 0px 10px rgb(255, 255, 255) !important;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .btn
+    {
+        color: white !important;
+        border: none;
+    }
+
+    .zapiszsie, .zalogujsie
+    {
+        background: linear-gradient(white,lightblue);
+        border: 2px solid blue;
+        box-shadow: 0 0 5px blue;
+        color: black;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+        transition: 0.7s ease;
+    }
+
+    .zapiszsie:hover, .zalogujsie:hover
+    {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.nav-item.dropdown
+{
+    color: white !important;
+    border-radius: 20px;
+}
+
+.nav-item.dropdown:hover 
+{
+    box-shadow: -0px 0px 10px rgb(255, 255, 255) !important;
+}
+
+.nav-item:hover 
+{
+    box-shadow: -0px 0px 10px rgb(255, 255, 255) !important;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.btn
+{
+    color: white !important;
+    border: none;
+}
+
+
+.dropdown-menu
+{
+    text-align: center;
+    border-radius: 10px;
+}
+
+.dropdown-item
+{
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.dropdown-item:hover
+{
+    box-shadow: 0px 0px 10px white;
+    border-radius: 10px;
+}
+
+.zapiszsie, .zalogujsie
+{
+    background: linear-gradient(white,lightblue);
+    border: 2px solid blue;
+    box-shadow: 0 0 5px blue;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+}
+
+.zapiszsie:hover, .zalogujsie:hover
+{
+    color: white;
+    background: black;
+    text-shadow: 1px 1px 1px white;
+}

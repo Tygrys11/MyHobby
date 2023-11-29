@@ -1,0 +1,9 @@
+.carousel {
+    max-width: 500px; /* Ustaw maksymalną szerokość karuzeli */
+    margin: auto; /* Centruj karuzelę */
+}
+
+.carousel-item img {
+    max-width: 100%; /* Ustaw maksymalną szerokość obrazków wewnątrz karuzeli */
+    height: auto; /* Dostosuj wysokość, aby utrzymać proporcje obrazka */
+}

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MyHobby</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- ICONS -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+  <!-- WEBSITE ICON -->
+  <link rel="shortcut icon" type="x-icon" href="assets/clipboard.png" />
+  
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+  <!-- JavaScript -->
+  <script src="js/cookies.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contactForm.css" />
+  <link rel="stylesheet" href="css/carousel.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/scroll.css">
+  <link rel="stylesheet" href="css/cookie.css">
+  <link rel="stylesheet" href="css/zoom.css">
+
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+      <div class="container-fluid py-1 p-5">
+        <!-- Logo -->
+        <a class="navbar-brand fs-4 text-white d-flex justify-content-center align-items-center" href="#home"><ion-icon
+            name="earth"></ion-icon> Świat Animacji <ion-icon name="earth"></ion-icon></a>
+
+        <!-- Toggle Btn -->
+        <button class="navbar-toggler border-4" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Sidebar -->
+        <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <!-- Sidebar Header -->
+          <div class="offcanvas-header border-bottom text-white">
+            <h5 class="offcanvas-title d-flex justify-content-center align-items-center" id="offcanvasNavbarLabel">
+              <ion-icon name="earth"></ion-icon> Świat Animacji <ion-icon name="earth"></ion-icon>
+            </h5>
+            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+
+          <!-- Sidebar Body -->
+          <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+            <ul class="navbar-nav nav-pills justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-2 text-white" aria-current="page" href="#home"><ion-icon name="home"></ion-icon>
+                  Strona główna</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                  style="font-size: 20px">
+                  <ion-icon name="clipboard"></ion-icon> Hobbies
+                </button>
+                <ul class="dropdown-menu bg-transparent">
+                  <li>
+                    <a class="dropdown-item" href="#infos">Mine-imator + Paint.net</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#infos">
+                      Mój kanał YT</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item mx-2">
+                <a class="nav-link text-white" href="#About"><ion-icon name="newspaper"></ion-icon> O mnie</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link text-white" href="#Contact"><ion-icon name="call"></ion-icon> Kontakt</a>
+              </li>
+            </ul>
+            <br />
+            <!-- Login / Sing up -->
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+              <a href="#" class="zalogujsie text-decoration-none px-4 py-2 rounded-4">Zaloguj się</a>
+              <a href="#" class="zapiszsie text-decoration-none px-4 py-2 rounded-4">Zarejestruj się</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div style="margin-bottom: 100px"></div>
+
+<!-- Zoom font -->
+  <div class="zoomsButtons">
+    <button id="zoom-in-btn"><i class='bx bxs-plus-circle' ></i> A</button>
+    <button id="zoom-out-btn"><i class='bx bxs-minus-circle' ></i> A</button>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+    // Początkowy rozmiar czcionki
+    var fontSize = parseInt($("main,p,h5,h1,h2,h3,b,i,div").css("font-size"));
+
+    // Funkcja do powiększania czcionki
+    $("#zoom-in-btn").on("click", function () {
+      fontSize += 2;
+      $("main,p,h5,h1,h2,h3,b,i").css("font-size", fontSize + "px");
+    });
+
+    // Funkcja do pomniejszania czcionki
+    $("#zoom-out-btn").on("click", function () {
+      if (fontSize > 10) {
+        fontSize -= 2;
+        $("main,p,h5,h1,h2,h3,i,div").css("font-size", fontSize + "px");
+      }
+    });
+  });
+  </script>
+
+  <div style="margin-bottom: 40px"></div>
+  <!-- Modal - Mine imator -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center w-100" id="exampleModalLabel"><img src="assets/index_head_logo.png"
+              width="300px" alt=""></h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Co to za program?</h3>
+          <b class="text-decoration-underline text-info">Mine-imator</b> to darmowe oprogramowanie do tworzenia animacji
+          związanych z grą Minecraft. Pozwala użytkownikom
+          na projektowanie i animowanie scen, postaci i obiektów, korzystając z elementów graficznych znanego świata
+          Minecraft. Poniżej znajdziesz krótki tutorial, który pomoże Ci zacząć korzystać z Mine-imator.
+
+          <hr>
+
+          <h1>Tutorial - Podstawa i instalacja</h3>
+            <br>
+
+            <h4>Krok 1: Pobierz Mine-imator</h4>
+            <br>
+            Przejdź na oficjalną stronę Mine-imator <a href="https://www.mineimator.com/"
+              target="_blank">https://www.mineimator.com/</a>.
+            Pobierz najnowszą wersję Mine-imator. Osobiście proponuje wersje Mine-imator 1.2.8, gdyż najwygodniej mi się
+            na niej pracuje.
+            <br><br>
+
+            <h4>Krok 2: Instalacja i Uruchomienie</h4>
+            <br>
+            Po pobraniu uruchom instalator Mine-imator i
+            postępuj zgodnie z instrukcjami instalatora.
+            Po zakończeniu instalacji uruchom program.
+            <br><br>
+
+            <h4>Krok 3: Interfejs Użytkownika</h4>
+            <br>
+            <b>Pasek Narzędziowy:</b> Zawiera podstawowe narzędzia do pracy, takie jak rysowanie, dodawanie obiektów
+            itp. <br>
+            <b>Panel Animacji:</b> Pozwala na zarządzanie animacjami. <br>
+            <b>Panel Obiektów:</b> Tutaj dodajesz obiekty do sceny, takie jak postacie, bloki itp. <br>
+            <b>Panel Klatek Kluczowych:</b> Służy do dodawania i edycji klatek kluczowych animacji. <br>
+            <br><br>
+
+            <h4>Krok 4: Tworzenie Animacji</h4>
+            <br>
+            <b>Dodawanie Postaci:</b> Wybierz panel "Obiekty" i przeciągnij postać Minecrafta na scenę. <br>
+            <b>Ustawienia Animacji:</b> Przejdź do panelu "Animacja" i ustaw czas animacji oraz inne parametry. <br>
+            <b>Dodawanie Klatek Kluczowych:</b> W panelu "Klatki Kluczowe" ustaw początkowe i końcowe pozycje postaci na
+            scenie. <br>
+            <b>Ruch i Rotacja:</b> Korzystając z narzędzi w pasku narzędziowym, dodawaj klatki kluczowe do ruchu,
+            rotacji i
+            innych efektów.
+            <br>
+            <br>
+
+            <h4>Krok 5: Renderowanie Animacji</h4>
+            <br>
+            <b>Ustawienia Renderowania:</b> Przejdź do menu "Renderowanie" i dostosuj ustawienia renderowania, takie jak
+            rozdzielczość i jakość. <br>
+            <b>Renderowanie Animacji:</b> Kliknij przycisk renderowania, aby rozpocząć proces generowania animacji. <br>
+            <b>Zapisywanie Animacji:</b> Po zakończeniu renderowania, zapisz swoją animację w wybranym formacie.
+            <br><br>
+            
+            <h4>Krok 6: Dodatkowe Funkcje</h4>
+            <br>
+            <b>Dodawanie Efektów:</b> Eksperymentuj z dodatkowymi efektami, takimi jak oświetlenie, cienie i inne, aby
+            ulepszyć
+            swoją animację. <br>
+            <b>Dźwięk:</b> Dodawaj dźwięk do animacji, aby nadać jej dodatkową warstwę realizmu. <br>
+            <b>Eksport do YouTube:</b> Możesz także udostępniać swoje animacje na platformie YouTube bezpośrednio z
+            Mine-imator.
+        </div>
+        <div class="modal-footer">
+          To tylko podstawy korzystania z Mine-imator. Z czasem, w miarę zdobywania doświadczenia, będziesz w stanie
+          tworzyć bardziej zaawansowane i efektowne animacje związane z Minecraftem.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Ciasteczka -->
+  <div class="cookie-banner">
+    <div class="headerek">
+      <i class='bx bx-cookie' ></i>
+      <h2> Ciasteczka</h2>
+    </div>
+    <div class="data">
+      <p>Ta witryna używa plików cookie. Korzystając z niej, zgadzasz się na używanie
+        plików cookie zgodnie z <a href="#" data-bs-toggle="modal" data-bs-target="#PolPryw">Polityką Prywatności</a>.
+      </p>
+    </div>
+    <div class="buttons">
+      <button class="buttone" id="accept">Zaakceptuj</button>
+      <button class="buttone">Odrzuć</button>
+    </div>
+  </div>
+  <main class="align-items-center justify-content-center p-4">
+    <!-- Główne -->
+    <section id="home">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="5"
+            aria-label="Slide 6"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="6"
+            aria-label="Slide 7"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="7"
+            aria-label="Slide 8"></button>
+        </div>
+
+        <div class="carousel-inner rounded-4" style="border: 3px solid rgb(0, 96, 86); box-shadow: 0 0 10px 3px teal;">
+
+          <div class="carousel-item active" data-interval="1000">
+            <img src="assets/Axelotl ja i Ionis.png" class="d-block w-100" interval="1000" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/DragoZiom i fabix098  speedrender.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/Happy holiday1.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/Happy New Year -  2023.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/Klarion - Short 9.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/Ognisko.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/SHORCIK - Balanciaga or other something 3.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-interval="1000">
+            <img src="assets/Team.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <br /><br />
+
+      <h5 class="text-decoration-underline text-uppercase mb-4 font-weight-bold text-white text-center"
+        style="font-size: 30px;">
+        Moje Hobby
+      </h5>
+      <p style="word-break: keep-all; text-align: center; font-size: 18px" class="text-white">
+        Animowanie w Mine-imator to fascynujące hobby, które pozwala na
+        tworzenie dynamicznych animacji z wykorzystaniem świata Minecraft. To
+        narzędzie stworzone specjalnie dla społeczności Minecraft,
+        umożliwiające entuzjastom animacji wyrażanie swojej kreatywności i
+        dzielenie się swoimi dziełami z innymi.
+      </p>
+    </section>
+
+    <br />
+    <hr id="infos" class="bg-info" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+    <br />
+    <!-- Cards -->
+    <section>
+      <h1 class="mb-4 font-weight-bold text-white text-center">Projekty i programy</h1>
+      <br>
+      <div class="wrapper">
+        <div class="cardd">
+          <img src="assets/logo Mine-imator.jpg" alt="">
+          <div class="info">
+            <h1>Mine-Imator</h1>
+            <p style="word-wrap: break-word;">Pierwszy krok do rozpoczęcia tworzenia animacji to pobranie i zapoznanie
+              się z programem.</p>
+            <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Czytaj więcej...</a>
+          </div>
+        </div>
+
+
+        <div class="cardd">
+          <img src="assets/zdjecie profilowe v2.png" alt="">
+          <div class="info">
+            <h1>Mój kanał YT</h1>
+            <p style="word-wrap: break-word;">Cześć
+              jestem Tygrys, ale możesz mi mówić Lira. Założyłem ten kanał, żeby robić dla Was fajne animacje.
+              Na moim kanale znajdziesz animacje z Minecrafta.
+
+              Zostaw subskrypcję i kciuk w górę jeśli podobają Ci się takie treści i mam nadzieję, że zostaniesz na
+              dłużej.
+
+              Pozdrawiam 😉</p>
+            <a href="#" class="button">Czytaj więcej...</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <br />
+    <hr id="About" class="bg-info" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+    <br />
+    <!-- O mnie -->
+    <section>
+      <h1 class="mb-4 font-weight-bold text-white text-center">O mnie</h1>
+      <p class="text-white">
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Animator z Pasją </b><br />
+
+        Jestem Justyna (Lira), z zamiłowaniem do animacji. Od najmłodszych lat
+        odkryłem radość tworzenia ruchu i historii za pomocą animacji. Już od
+        jakiego czasu jestem animatorem, który nieustannie poszerza swoje
+        umiejętności, dążąc do przekształcania pomysłów w dynamiczne i
+        porywające animacje.
+        <br /><br />
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Doświadczenie</b><br />
+
+        Moje doświadczenie obejmuje prace nad różnorodnymi projektami, w tym
+        animacjami postaci oraz efektami specjalnymi i filmami
+        krótkometrażowymi. Pracowałam zarówno nad krótkimi (shortami), jak i
+        długimi animacjami opowiadającymi o demonach i czarodziejach, co
+        kontynuuje do dziś. Pozwoliło mi to rozwijać kreatywność i tworzenia
+        coraz lepszych projektów.
+        <br /><br />
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Zainteresowania</b><br />
+
+        Moje zainteresowania w animacji obejmują eksperymentowanie z różnymi
+        stylami, technikami i narzędziami. Fascynuje mnie również możliwość
+        wprowadzania widzów w światy pełne emocji i opowieści. Śledzę
+        najnowsze trendy w animacji, ale zawsze staram się wprowadzać do moich
+        prac unikalne elementy.
+        <br /><br />
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Cele</b><br />
+
+        Moim celem jest nie tylko doskonalenie swoich umiejętności
+        programistycznych, ale także rozwijanie zdolności opowiadania historii
+        za pomocą animacji. Marzę o udziale w projektach, które przynoszą
+        radość i inspirację widzom.
+        <br /><br />
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Osiągnięcia</b><br />
+
+        Kanał na YouTube - Prowadzenie kanału, na którym prezentuję swoje
+        projekty oraz inspiruje innych do spróbowania swoich sił w dzidzinie
+        animacji.
+        <br /><br />
+        <b class="text-decoration-underline kolor-1" style="font-size: 20px">Przyszłość</b><br />
+
+        Niezależnie od tego, czy pracuję nad własnymi projektami, czy
+        współpracuję z innymi kreatywnymi umysłami, jestem gotów na dalsze
+        wyzwania, które niesie ze sobą świat animacji. Chcę nieustannie się
+        rozwijać, inspirować i wpływać na widzów za pomocą magicznej siły
+        ruchu.
+      </p>
+    </section>
+
+    <br />
+    <hr class="bg-info" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+    <br />
+
+    <!-- Contact -->
+    <section id="Contact">
+      <h1 class="my-5 text-white text-center">Skontaktuj się</h1>
+
+    </section>
+
+  </main>
+
+  <div style="margin-bottom: 40px"></div>
+
+  <!-- Modal - Polityka Prywatności -->
+  <div class="modal fade" id="PolPryw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center w-100" id="exampleModalLabel">Polityka Prywatności</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez
+          Użytkowników w związku z korzystaniem z usług dostępnych w serwisie internetowym, [nazwa witryny] (dalej
+          zwanej "Serwisem").
+
+          Administratorem danych osobowych zawartych w Serwisie jest [Twoje imię i nazwisko lub nazwa firmy], prowadzący
+          działalność gospodarczą pod adresem: [twój adres], NIP: [numer NIP], REGON: [numer REGON].
+
+          [Twoje imię i nazwisko lub nazwa firmy] dokłada szczególnej staranności, aby respektować prywatność
+          Użytkowników odwiedzających nasz Serwis. Podjęte zostały wszelkie niezbędne środki, aby chronić interesy osób,
+          których dane dotyczą.
+
+          Definicje
+
+          Serwis – serwis internetowy dostępny pod adresem [adres URL], prowadzony przez [Twoje imię i nazwisko lub
+          nazwa firmy].
+          Użytkownik – osoba korzystająca z Serwisu.
+          Dane osobowe – oznaczają informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby
+          fizycznej (np. imię i nazwisko, adres e-mail, numer telefonu).
+          Podstawowe zasady
+
+          Administracja Serwisu dokłada wszelkich starań, aby przetwarzane dane były:
+
+          zgodne z prawem,
+          zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi
+          celami,
+          merytorycznie poprawne i adekwatne w stosunku do celów, w jakich są przetwarzane,
+          przechowywane w postaci umożliwiającej identyfikację osób, których dotyczą, nie dłużej niż jest to niezbędne
+          do osiągnięcia celu przetwarzania.
+          [Twoje imię i nazwisko lub nazwa firmy] nie udostępnia zebranych danych osobowych innym podmiotom, chyba że
+          uzyska zgodę użytkownika lub będzie to wymagane przez obowiązujące przepisy prawa.
+
+          [Twoje imię i nazwisko lub nazwa firmy] może być zobowiązane do udostępnienia informacji zebranych przez
+          Serwis upoważnionym organom na podstawie zgodnych z prawem żądań w zakresie wynikającym z żądania.
+
+          Bezpieczeństwo danych
+
+          Dostęp do danych osobowych mają jedynie upoważnieni pracownicy [Twoje imię i nazwisko lub nazwa firmy].
+
+          Dane osobowe przechowywane są na zabezpieczonych serwerach.
+
+          Cele przetwarzania danych
+
+          [Twoje imię i nazwisko lub nazwa firmy] przetwarza dane użytkowników w celu:
+
+          świadczenia usług prowadzonych w Serwisie,
+          dostosowania treści wyświetlanych Użytkownikowi, w tym treści zawierających oznaczenia lokalizacyjne,
+          realizacji zamówień.
+          [Twoje imię i nazwisko lub nazwa firmy] podejmuje działania mające na celu ochronę danych osobowych przed
+          dostępem osób nieupoważnionych.
+
+          Pliki "cookies"
+
+          Serwis korzysta z plików "cookies".
+
+          Pliki "cookies" (tzw. ciasteczka) stanowią dane informatyczne, zwłaszcza pliki tekstowe, które przechowywane
+          są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze stron internetowych Serwisu.
+          "Cookies" zazwyczaj zawierają nazwę strony internetowej, z której pochodzą, czas przechowywania ich na
+          urządzeniu końcowym oraz unikalny numer.
+
+          Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu pliki "cookies" oraz uzyskującym do nich
+          dostęp jest operator Serwisu.
+
+          Pliki "cookies" wykorzystywane są w celu:
+
+          dostosowania zawartości stron internetowych Serwisu do preferencji Użytkownika oraz optymalizacji korzystania
+          ze stron internetowych; w szczególności pliki te pozwalają rozpoznać urządzenie Użytkownika Serwisu i
+          odpowiednio wyświetlić stronę internetową, dostosowaną do jego indywidualnych potrzeb,
+          tworzenia statystyk, które pomagają zrozumieć, w jaki sposób Użytkownicy Serwisu korzystają ze stron
+          internetowych, co umożliwia ulepszanie ich struktury i zawartości.
+          W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików "cookies": "sesyjne" (session cookies) oraz
+          "stałe" (persistent cookies). Cookies "sesyjne" są plikami tymczasowymi, które przechowywane są w urządzeniu
+          końcowym Użytkownika do czasu wylogowania, opuszczenia strony internetowej lub wyłączenia oprogramowania
+          (przeglądarki internetowej). "Stałe" pliki "cookies" przechowywane są w urządzeniu końcowym Użytkownika przez
+          czas określony w parametrach plików "cookies" lub do czasu ich usunięcia przez Użytkownika.
+
+          Oprogramowanie do przeglądania stron internetowych (przeglądarka internetowa) zazwyczaj domyślnie dopuszcza
+          przechowywanie plików "cookies" w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany
+          ustaw
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal - FaQ -->
+  <div class="modal fade" id="FaQ" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center w-100" id="exampleModalLabel">FaQ</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <br>
+          <div class="text-info">1. Czym jest Mine-imator?</div><br>
+          Odpowiedź: Mine-imator to darmowe narzędzie do tworzenia animacji w świecie Minecrafta. Pozwala ono na łatwe
+          tworzenie filmów animowanych z użyciem elementów i postaci z gry.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">2. Czy korzystanie z Mine-imator wymaga umiejętności programistycznych?</div><br>
+          Odpowiedź: Nie, Mine-imator został stworzony z myślą o prostocie obsługi. Nie są wymagane umiejętności
+          programistyczne. Interfejs jest intuicyjny, co ułatwia tworzenie animacji nawet dla początkujących.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">3. Jakie są dostępne funkcje w Mine-imator do tworzenia animacji?</div><br>
+          Odpowiedź: Mine-imator oferuje wiele funkcji, takich jak animacja postaci, kamery, efekty dźwiękowe, a także
+          możliwość importowania własnych tekstur i modeli.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">4. Czy mogę udostępniać swoje animacje stworzone w Mine-imator?</div><br>
+          Odpowiedź: Tak, Mine-imator umożliwia eksportowanie gotowych animacji do plików wideo. Możesz udostępniać
+          swoje animacje na różnych platformach, takich jak YouTube czy strony społecznościowe.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">5. Czy jest dostępne wsparcie społeczności dla użytkowników Mine-imator?</div><br>
+          Odpowiedź: Tak, istnieje aktywna społeczność użytkowników Mine-imator. Możesz uzyskać pomoc, dzielić się
+          swoimi pracami i czerpać inspirację na oficjalnym forum lub innych platformach społecznościowych.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">6. Czy istnieje instrukcja obsługi Mine-imator dla początkujących?</div><br>
+          Odpowiedź: Tak, istnieje wiele tutoriali i instrukcji dostępnych online dla początkujących. Możesz znaleźć je
+          na oficjalnej stronie Mine-imator, na platformach wideo lub w społeczności.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">7. Czy jest możliwość dodawania własnych tekstur i modeli do Mine-imator?</div><br>
+          Odpowiedź: Tak, Mine-imator umożliwia dodawanie niestandardowych tekstur i modeli, co pozwala na bardziej
+          personalizowane i unikalne animacje.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">8. Czy są dostępne aktualizacje Mine-imator?</div><br>
+          Odpowiedź: Tak, Mine-imator regularnie otrzymuje aktualizacje, które wprowadzają nowe funkcje, poprawki błędów
+          i ulepszenia. Zaleca się regularne sprawdzanie dostępnych aktualizacji.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">9. Czy Mine-imator jest dostępny na różnych platformach?</div> <br>
+          Odpowiedź: Mine-imator jest dostępny tylko na systemy Windows. Nie jest obecnie dostępny na macOS czy Linux.
+          <br>
+          <br>
+          <hr>
+          <br>
+          <div class="text-info">10. Czy można używać Mine-imator do animacji innych niż Minecraft?</div><br>
+          Odpowiedź: Głównym celem Mine-imator jest animacja w świecie Minecrafta, ale możesz eksperymentować i tworzyć
+          animacje z wykorzystaniem dostępnych narzędzi również w innych kontekstach.
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="pt-5 pb-4">
+    <div class="container text-center text-md-left">
+      <div class="row text-center text-md-left">
+        <div class="col-md-4 col-lg-3 col-xs-3 mx-auto mt-3">
+          <h5 class="text-decoration-underline text-uppercase mb-4 font-weight-bold text-white">
+            O stronie
+          </h5>
+
+          <p style="word-wrap: break-word" class="text-white">
+            "Świat Animacji" to miejsce, gdzie pasjonaci animacji dzielą się swoimi projektami, doświadczeniami
+            i inspiracjami. Odkryj animacje, poradniki, forum dyskusyjne, wydarzenia i zasoby tworzone przez społeczność
+            animatorów. Dołącz do kreatywnej społeczności entuzjastów animacji!</p>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xs-2 mx-auto mt-3">
+          <h5 class="text-decoration-underline text-uppercase mb-4 font-weight-bold text-white">
+            Wsparcie
+          </h5>
+
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none" data-bs-toggle="modal"
+              data-bs-target="#FaQ">FaQ</a>
+          </p>
+
+          <p>
+            <a href="#" class="text-white" style="text-decoration: none" data-bs-toggle="modal"
+              data-bs-target="#PolPryw">Polityka prywatności</a>
+          </p>
+
+          <p>
+            <a href="#Contact" class="text-white" style="text-decoration: none">Kontakt</a>
+          </p>
+        </div>
+
+        <div class="col-md-5 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-decoration-underline text-uppercase mb-4 font-weight-bold text-white">
+            Obserwuj
+          </h5>
+          <div class="text-white text-md-end">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://www.twitch.tv/" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                  <ion-icon name="logo-twitch"></ion-icon>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://www.youtube.com/" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="https://github.com/" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                  <ion-icon name="logo-github"></ion-icon>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-decoration-underline text-uppercase mb-4 font-weight-bold text-white">
+            Kontakt
+          </h5>
+
+          <p class="text-white">
+            <ion-icon name="location"></ion-icon> Polska
+          </p>
+          <p class="text-white">
+            <ion-icon name="mail"></ion-icon> juskuch2007@gmail.com
+          </p>
+          <p class="text-white">
+            <ion-icon name="call"></ion-icon> +48 555 444 222
+          </p>
+        </div>
+
+        <hr class="mb-4" />
+
+        <div class="row align-items-center justify-content-center">
+          <p class="text-white">
+            Copyright ©2020 Wszelkie prawa zastrzeżone przez:
+            <a href="#" style="text-decoration: none"><strong class="text-info">Tygrys11</strong></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
