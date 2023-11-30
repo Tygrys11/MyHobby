@@ -4,8 +4,10 @@ $(document).ready(function () {
 
     // Funkcja do powiększania czcionki
     $("#zoom-in-btn").on("click", function () {
+      if(fontSize < 30){
       fontSize += 2;
       $("main").css("font-size", fontSize + "px");
+    }
     });
 
     // Funkcja do pomniejszania czcionki
