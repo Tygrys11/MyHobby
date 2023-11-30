@@ -17,7 +17,7 @@
 
   <!-- WEBSITE ICON -->
   <link rel="shortcut icon" type="x-icon" href="assets/clipboard.png" />
-  
+
 
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -118,36 +118,17 @@
 
   <div style="margin-bottom: 100px"></div>
 
-<!-- Zoom font -->
+  <!-- Zoom font -->
   <div class="zoomsButtons">
-    <button id="zoom-in-btn"><i class='bx bxs-plus-circle' ></i> A</button>
-    <button id="zoom-out-btn"><i class='bx bxs-minus-circle' ></i> A</button>
+    <button id="zoom-in-btn"><i class='bx bxs-plus-circle'></i> A</button>
+    <button id="zoom-out-btn"><i class='bx bxs-minus-circle'></i> A</button>
   </div>
 
-  <script>
-    $(document).ready(function () {
-    // Początkowy rozmiar czcionki
-    var fontSize = parseInt($("main,p,h5,h1,h2,h3,b,i,div").css("font-size"));
-
-    // Funkcja do powiększania czcionki
-    $("#zoom-in-btn").on("click", function () {
-      fontSize += 2;
-      $("main,p,h5,h1,h2,h3,b,i").css("font-size", fontSize + "px");
-    });
-
-    // Funkcja do pomniejszania czcionki
-    $("#zoom-out-btn").on("click", function () {
-      if (fontSize > 10) {
-        fontSize -= 2;
-        $("main,p,h5,h1,h2,h3,i,div").css("font-size", fontSize + "px");
-      }
-    });
-  });
-  </script>
+  <script src="js/zoom.js"></script>
 
   <div style="margin-bottom: 40px"></div>
   <!-- Modal - Mine imator -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="Mine-imator" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
       <div class="modal-content">
         <div class="modal-header">
@@ -156,73 +137,348 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <h3>Co to za program?</h3>
-          <b class="text-decoration-underline text-info">Mine-imator</b> to darmowe oprogramowanie do tworzenia animacji
-          związanych z grą Minecraft. Pozwala użytkownikom
-          na projektowanie i animowanie scen, postaci i obiektów, korzystając z elementów graficznych znanego świata
-          Minecraft. Poniżej znajdziesz krótki tutorial, który pomoże Ci zacząć korzystać z Mine-imator.
+          <div class="texting">
+            <h3>Co to za program?</h3>
+            <b class="text-decoration-underline text-info">Mine-imator</b> to darmowe oprogramowanie do tworzenia
+            animacji
+            związanych z grą Minecraft. Pozwala użytkownikom
+            na projektowanie i animowanie scen, postaci i obiektów, korzystając z elementów graficznych znanego świata
+            Minecraft. Poniżej znajdziesz krótki tutorial, który pomoże Ci zacząć korzystać z Mine-imator.
 
-          <hr>
+            <hr>
 
-          <h1>Tutorial - Podstawa i instalacja</h3>
-            <br>
+            <h1>Tutorial - Podstawa i instalacja</h3>
+              <br>
 
-            <h4>Krok 1: Pobierz Mine-imator</h4>
-            <br>
-            Przejdź na oficjalną stronę Mine-imator <a href="https://www.mineimator.com/"
-              target="_blank">https://www.mineimator.com/</a>.
-            Pobierz najnowszą wersję Mine-imator. Osobiście proponuje wersje Mine-imator 1.2.8, gdyż najwygodniej mi się
-            na niej pracuje.
-            <br><br>
+              <h4>Krok 1: Pobierz Mine-imator</h4>
+              <br>
+              Przejdź na oficjalną stronę Mine-imator <a href="https://www.mineimator.com/"
+                target="_blank">https://www.mineimator.com/</a>.
+              Pobierz najnowszą wersję Mine-imator. Osobiście proponuje wersje Mine-imator 1.2.8, gdyż najwygodniej mi
+              się
+              na niej pracuje.
+              <br><br>
 
-            <h4>Krok 2: Instalacja i Uruchomienie</h4>
-            <br>
-            Po pobraniu uruchom instalator Mine-imator i
-            postępuj zgodnie z instrukcjami instalatora.
-            Po zakończeniu instalacji uruchom program.
-            <br><br>
+              <h4>Krok 2: Instalacja i Uruchomienie</h4>
+              <br>
+              Po pobraniu uruchom instalator Mine-imator i
+              postępuj zgodnie z instrukcjami instalatora.
+              Po zakończeniu instalacji uruchom program.
+              <br><br>
 
-            <h4>Krok 3: Interfejs Użytkownika</h4>
-            <br>
-            <b>Pasek Narzędziowy:</b> Zawiera podstawowe narzędzia do pracy, takie jak rysowanie, dodawanie obiektów
-            itp. <br>
-            <b>Panel Animacji:</b> Pozwala na zarządzanie animacjami. <br>
-            <b>Panel Obiektów:</b> Tutaj dodajesz obiekty do sceny, takie jak postacie, bloki itp. <br>
-            <b>Panel Klatek Kluczowych:</b> Służy do dodawania i edycji klatek kluczowych animacji. <br>
-            <br><br>
+              <h4>Krok 3: Interfejs Użytkownika</h4>
+              <br>
+              <b>Pasek Narzędziowy:</b> Zawiera podstawowe narzędzia do pracy, takie jak rysowanie, dodawanie obiektów
+              itp. <br>
+              <b>Panel Animacji:</b> Pozwala na zarządzanie animacjami. <br>
+              <b>Panel Obiektów:</b> Tutaj dodajesz obiekty do sceny, takie jak postacie, bloki itp. <br>
+              <b>Panel Klatek Kluczowych:</b> Służy do dodawania i edycji klatek kluczowych animacji. <br>
+              <br><br>
 
-            <h4>Krok 4: Tworzenie Animacji</h4>
-            <br>
-            <b>Dodawanie Postaci:</b> Wybierz panel "Obiekty" i przeciągnij postać Minecrafta na scenę. <br>
-            <b>Ustawienia Animacji:</b> Przejdź do panelu "Animacja" i ustaw czas animacji oraz inne parametry. <br>
-            <b>Dodawanie Klatek Kluczowych:</b> W panelu "Klatki Kluczowe" ustaw początkowe i końcowe pozycje postaci na
-            scenie. <br>
-            <b>Ruch i Rotacja:</b> Korzystając z narzędzi w pasku narzędziowym, dodawaj klatki kluczowe do ruchu,
-            rotacji i
-            innych efektów.
-            <br>
-            <br>
+              <h4>Krok 4: Tworzenie Animacji</h4>
+              <br>
+              <b>Dodawanie Postaci:</b> Wybierz panel "Obiekty" i przeciągnij postać Minecrafta na scenę. <br>
+              <b>Ustawienia Animacji:</b> Przejdź do panelu "Animacja" i ustaw czas animacji oraz inne parametry. <br>
+              <b>Dodawanie Klatek Kluczowych:</b> W panelu "Klatki Kluczowe" ustaw początkowe i końcowe pozycje postaci
+              na
+              scenie. <br>
+              <b>Ruch i Rotacja:</b> Korzystając z narzędzi w pasku narzędziowym, dodawaj klatki kluczowe do ruchu,
+              rotacji i
+              innych efektów.
+              <br>
+              <br>
 
-            <h4>Krok 5: Renderowanie Animacji</h4>
-            <br>
-            <b>Ustawienia Renderowania:</b> Przejdź do menu "Renderowanie" i dostosuj ustawienia renderowania, takie jak
-            rozdzielczość i jakość. <br>
-            <b>Renderowanie Animacji:</b> Kliknij przycisk renderowania, aby rozpocząć proces generowania animacji. <br>
-            <b>Zapisywanie Animacji:</b> Po zakończeniu renderowania, zapisz swoją animację w wybranym formacie.
-            <br><br>
-            
-            <h4>Krok 6: Dodatkowe Funkcje</h4>
-            <br>
-            <b>Dodawanie Efektów:</b> Eksperymentuj z dodatkowymi efektami, takimi jak oświetlenie, cienie i inne, aby
-            ulepszyć
-            swoją animację. <br>
-            <b>Dźwięk:</b> Dodawaj dźwięk do animacji, aby nadać jej dodatkową warstwę realizmu. <br>
-            <b>Eksport do YouTube:</b> Możesz także udostępniać swoje animacje na platformie YouTube bezpośrednio z
-            Mine-imator.
+              <h4>Krok 5: Renderowanie Animacji</h4>
+              <br>
+              <b>Ustawienia Renderowania:</b> Przejdź do menu "Renderowanie" i dostosuj ustawienia renderowania, takie
+              jak
+              rozdzielczość i jakość. <br>
+              <b>Renderowanie Animacji:</b> Kliknij przycisk renderowania, aby rozpocząć proces generowania animacji.
+              <br>
+              <b>Zapisywanie Animacji:</b> Po zakończeniu renderowania, zapisz swoją animację w wybranym formacie.
+              <br><br>
+
+              <h4>Krok 6: Dodatkowe Funkcje</h4>
+              <br>
+              <b>Dodawanie Efektów:</b> Eksperymentuj z dodatkowymi efektami, takimi jak oświetlenie, cienie i inne, aby
+              ulepszyć
+              swoją animację. <br>
+              <b>Dźwięk:</b> Dodawaj dźwięk do animacji, aby nadać jej dodatkową warstwę realizmu. <br>
+              <b>Eksport do YouTube:</b> Możesz także udostępniać swoje animacje na platformie YouTube bezpośrednio z
+              Mine-imator.
+          </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer texting">
           To tylko podstawy korzystania z Mine-imator. Z czasem, w miarę zdobywania doświadczenia, będziesz w stanie
           tworzyć bardziej zaawansowane i efektowne animacje związane z Minecraftem.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal - My Channel -->
+  <div class="modal fade" id="MyChannel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 900px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center w-100" id="exampleModalLabel"><img src="assets/BANER.png" width="800px"
+              alt=""></h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="texting">
+            Cześć, <br>
+            Jestem Tygrys, ale możesz mi mówić Lira. Założyłem ten kanał, żeby robić dla Was fajne animacje.
+            Na moim kanale znajdziesz animacje z Minecrafta.
+
+            Zostaw subskrypcję i kciuk w górę jeśli podobają Ci się takie treści i mam nadzieję, że zostaniesz na
+            dłużej.
+            <br>
+            Pozdrawiam 😉
+            <hr>
+            <img src="assets/Talizman Tygrysa bez tła.png" alt="" width="50px">
+            Kanał: <a href="https://www.youtube.com/channel/UCduLTAIfZSYVNrVwfEtSdRg"
+              class="text-info kanalek">Tygrys11</a>
+            <img src="assets/Talizman Tygrysa bez tła.png" alt="" width="50px">
+            <br>
+            <hr>
+            <br>
+            <b>🎨 Tworzenie Animacji od Zera:</b> <br>
+            Zapraszam Was do fascynującego świata tworzenia animacji. Na moim kanale znajdziecie różnorodne
+            filmy, począwszy od animacji Minecraft, krótkometrażowych filmów, po interesujące historie np. na temat
+            demonów i magów.
+            <br><br>
+            <b>🌈 Kreatywność w Każdym Kadrze:</b> <br>
+            Jestem przekonana, że kreatywność nie zna granic. Tutaj stawiam na unikalność i oryginalność, kreując
+            animacje, które chcę, abyście zapamiętali na długo.
+            <br><br>
+            <b>👩‍💻 Postacie i Fabuła:</b> <br>
+            W moich animacjach poznasz wyraziste postacie i zanurzysz się w emocjonujące historie. Fabuła to kluczowy
+            element, który sprawia, że każda animacja staje się niezapomniana.
+            <br><br>
+            <b>👥 Interakcja z Widzami:</b> <br>
+            Wasze komentarze i sugestie są dla mnie niezwykle ważne! Tworzycie moją wspaniałą, aktywną widownie, a wasze
+            wsparcie
+            pomaga mi się dalej rozwijać i tworzyć coraz lepsze projekty.
+            <br><br>
+            <hr>
+            <h3 class="text-center">INFORMACJE O CHARAKTERACH</h3>
+            <hr>
+
+            <img src="assets/Characters Information/Tygrys_Character.png" alt="" width="800px"> <br><br>
+            <img src="assets/Characters Information/Luiza Character.png" alt="" width="800px"> <br><br>
+            <img src="assets/Characters Information/fabix character.png" alt="" width="800px"> <br><br>
+            <img src="assets/Characters Information/Rea Character.png" alt="" width="800px"> <br><br>
+            <img src="assets/Characters Information/Ionis Character.png" alt="" width="800px"> <br><br>
+            <hr>
+            <h3 class="text-center text-info"><i class='bx bxl-discord'></i> DISCORD <i class='bx bxl-discord'></i></h3>
+            <hr><br>
+            <h4 class="text-center">🌟 Witaj w Animacyjnym Świecie! 🌟</h4>
+
+            Zapraszamy do naszego dynamicznego serwera Discord, gdzie zjednoczeni jesteśmy pasją do animacji!
+            Liras, twórca kanału YouTube pełnego animacyjnych przygód, serdecznie witamy cię w naszej
+            społeczności.
+            <br><br>
+            <h4 class="text-center">🎨 Co znajdziesz na naszym serwerze? 🎨</h4>
+
+            <b>💬 Społeczność Animacyjna:</b> <br>
+            Poznaj innych entuzjastów animacji, dziel się swoimi projektami, pomysłami i
+            inspiracjami. Twórz nowe znajomości z osobami, które kochają sztukę animacji tak samo jak ty!
+            <br><br>
+            <b>🎉 Wydarzenia Społecznościowe:</b> <br>
+            Regularnie organizujemy wydarzenia, konkursy i wyzwania animacyjne. To
+            doskonała okazja do pokazania swojego talentu i zdobycia fantastycznych nagród.
+            <br><br>
+            <b>🔧 Porady i Wsparcie:</b> <br>
+            Dziel się swoimi doświadczeniami z tworzenia animacji, pytaj o porady, a nasi
+            doświadczeni animacyjni mistrzowie zawsze chętnie pomogą. Razem rozwijamy się i inspirujemy!
+            <br><br>
+            <b>🌐 Kanały Tematyczne:</b> <br>
+            Znajdziesz specjalne kanały dla różnych gatunków animacji, od Minecraft po komediowe,
+            gdzie możesz dzielić się swoimi ulubionymi produkcjami i dyskutować na temat najnowszych trendów.
+            <br><br>
+            <b>🤝 Współprace i Projekty:</b> <br>
+            Szukasz partnera do współpracy nad animacją? Nasz serwer to doskonałe miejsce, aby
+            znaleźć kreatywnych ludzi, z którymi możesz tworzyć fantastyczne projekty.
+            <br><br>
+            <b>🚀 Dołącz do naszej Społeczności! 🚀</b> <br>
+
+            Nie czekaj! Dołącz do nas już teraz i stań się częścią inspirującego świata animacji. Liras i cała
+            społeczność czekają na ciebie. 🎉✨ <br><br>
+
+            [Link zaproszeniowy do serwera] <br><br>
+
+            Tworzymy razem, inspirujemy się nawzajem, odkrywamy magiczny świat animacji! 🌈🎬
+            <br><br>
+          </div>
+        </div>
+        <div class="modal-footer texting">
+          Dołączcie do mnie na tej niesamowitej podróży pełnej kolorów, emocji i oczywiście animacji! Subskrybujcie,
+          zostawcie łapkę w górę i bądźcie częścią tej niezwykłej przygody. 🚀✨
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal - Projects -->
+  <div class="modal fade" id="Projects" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 900px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center w-100" id="exampleModalLabel"><i class='bx bxs-movie-play'></i> Projekty <i
+              class='bx bxs-movie-play'></i></h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="texting">
+            <h3 class="text-center"><i class='bx bxs-camera-movie'></i> FILMY KRÓTKOMETRAŻOWE <i
+                class='bx bxs-camera-movie'></i></h3>
+            <hr>
+            <div class="text-center">
+              <br>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/KJDMdU7Xe0c?si=XitNTHbULzJ5Hejc"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/8RWAt-IyEZo?si=6KupC39J9sRn-8IE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/6U-Ol6axRxE?si=n2X7sWj0d4lzvkgp"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/z09W5Ui8Esc?si=9asVnvexgUHcyG1Y"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/oG5d91bdyAA?si=IuQAe5EsnWMl2ppa"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+            height: 20px;
+            box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+            border: none;
+          " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/by2UU3uXfWU?si=27XUKvx-OU7QN4Qu"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+            height: 20px;
+            box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+            border: none;
+          " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/mxia3lLr0QU?si=qpWTqINR532wTt6D"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+            height: 20px;
+            box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+            border: none;
+          " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/opR2HrcOfvg?si=yuNCZzqwMBuy6gts"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/GXXORwBnwhI?si=4ghFyObmRzEk7Meb"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Rc34PqCr8LQ?si=7QAbbxRslwuczDGl"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/IHP4I6cBdko?si=gxLSmrjheC0qjb_o"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+
+              <br>
+              <hr id="infos" class="bg-secondary" style="
+          height: 20px;
+          box-shadow: 0 0 10px 5px rgb(0, 183, 255);
+          border: none;
+        " />
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/BAs8tF1FdoQ?si=6f5SaCqBMgvHzYrR"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+              <br><br>
+              <hr>
+              <h3 class="text-center">BRONIE</h3>
+              <hr>
+
+              <img src="assets/Weapons/Item.png" alt="" width="800px"> <br><br>
+              <img src="assets/Weapons/Scythe.png" alt="" width="800px"> <br><br>
+              <img src="assets/Weapons/Spear.png" alt="" width="800px"> <br><br>
+              <img src="assets/Weapons/Sword.png" alt="" width="800px">
+              <br><br>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer texting">
+
         </div>
       </div>
     </div>
@@ -230,7 +486,7 @@
   <!-- Ciasteczka -->
   <div class="cookie-banner">
     <div class="headerek">
-      <i class='bx bx-cookie' ></i>
+      <i class='bx bx-cookie'></i>
       <h2> Ciasteczka</h2>
     </div>
     <div class="data">
@@ -332,17 +588,6 @@
       <br>
       <div class="wrapper">
         <div class="cardd">
-          <img src="assets/logo Mine-imator.jpg" alt="">
-          <div class="info">
-            <h1>Mine-Imator</h1>
-            <p style="word-wrap: break-word;">Pierwszy krok do rozpoczęcia tworzenia animacji to pobranie i zapoznanie
-              się z programem.</p>
-            <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Czytaj więcej...</a>
-          </div>
-        </div>
-
-
-        <div class="cardd">
           <img src="assets/zdjecie profilowe v2.png" alt="">
           <div class="info">
             <h1>Mój kanał YT</h1>
@@ -354,10 +599,36 @@
               dłużej.
 
               Pozdrawiam 😉</p>
-            <a href="#" class="button">Czytaj więcej...</a>
+            <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#MyChannel">Czytaj więcej...</a>
+          </div>
+        </div>
+
+
+        <div class="cardd">
+          <img src="assets/logo Mine-imator.jpg" alt="">
+          <div class="info">
+            <h1>Mine-Imator</h1>
+            <p style="word-wrap: break-word;">Pierwszy krok do rozpoczęcia tworzenia animacji to pobranie i początkowe
+              zapoznanie się z programem.</p>
+            <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#Mine-imator">Czytaj więcej...</a>
+          </div>
+        </div>
+
+
+        <div class="cardd">
+          <img src="assets/Tygrys11 - lives2.png" alt="">
+          <div class="info">
+            <h1>Projekty</h1>
+            <p style="word-wrap: break-word;">
+              Zrobiłam kilka filmów krótkometrażowych, dodatków, których używam oraz postaci. Mogę także zdradzić, że
+              już wkrótce pojawią się nowe odcinki z bardzo ciekawej, pełnej emocji historii.
+            </p>
+            <a href="#" class="button" data-bs-toggle="modal" data-bs-target="#Projects">Czytaj więcej...</a>
           </div>
         </div>
       </div>
+
+
 
     </section>
 
@@ -426,12 +697,37 @@
           box-shadow: 0 0 10px 5px rgb(0, 183, 255);
           border: none;
         " />
-    <br />
 
-    <!-- Contact -->
+    <!-- Contact + Validation -->
     <section id="Contact">
-      <h1 class="my-5 text-white text-center">Skontaktuj się</h1>
+      <h1 class="my-5 text-white text-center">Fanarty</h1>
+      <div class="input_container">
+        <form action="index.html" name="FormValidation" id="formValidation">
+          <div class="input-row">
+            <input type="text" name="nick" placeholder="Nick" required>
+          </div>
 
+          <div class="input-row">
+            <input type="text" name="email" placeholder="Email" required>
+          </div>
+
+          <div class="input-row">
+            <textarea name="FormMessage" placeholder="Wiadomość" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label text-white fs-5">Dodaj swoje prace</label>
+            <input class="form-control" name="files" type="file" id="formFileMultiple" multiple required>
+          </div>
+          <br>
+          <div class="text-center">
+            <input type="submit" value="Wyślij">
+          </div>
+        </form>
+        <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+        <script src="js/validationForm.js"></script>
+      </div>
     </section>
 
   </main>
@@ -439,95 +735,104 @@
   <div style="margin-bottom: 40px"></div>
 
   <!-- Modal - Polityka Prywatności -->
-  <div class="modal fade" id="PolPryw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title text-center w-100" id="exampleModalLabel">Polityka Prywatności</h1>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez
-          Użytkowników w związku z korzystaniem z usług dostępnych w serwisie internetowym, [nazwa witryny] (dalej
-          zwanej "Serwisem").
+  <div class="texting">
+    <div class="modal fade" id="PolPryw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 700px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title text-center w-100" id="exampleModalLabel">Polityka Prywatności</h1>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez
+            Użytkowników w związku z korzystaniem z usług dostępnych w serwisie internetowym, "Świat Animacji" (dalej
+            zwanej "Serwisem").
+            <br><br>
+            Administratorem danych osobowych zawartych w Serwisie jest Liras, prowadzący
+            działalność gospodarczą pod adresem: [twój adres], NIP: [numer NIP], REGON: [numer REGON].
+            <br><br>
+            Liras dokłada szczególnej staranności, aby respektować prywatność
+            Użytkowników odwiedzających nasz Serwis. Podjęte zostały wszelkie niezbędne środki, aby chronić interesy
+            osób,
+            których dane dotyczą.
+            <br><br>
+            <b class="text-info text-decoration-underline">Definicje:</b> <br>
 
-          Administratorem danych osobowych zawartych w Serwisie jest [Twoje imię i nazwisko lub nazwa firmy], prowadzący
-          działalność gospodarczą pod adresem: [twój adres], NIP: [numer NIP], REGON: [numer REGON].
+            Serwis – serwis internetowy dostępny pod adresem [adres URL], prowadzony przez Liras. <br>
+            Użytkownik – osoba korzystająca z Serwisu. <br>
+            Dane osobowe – oznaczają informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby
+            fizycznej (np. imię i nazwisko, adres e-mail, numer telefonu).
+            <br><br>
+            <h4>Podstawowe zasady</h4>
+            <br>
+            <b class="text-info text-decoration-underline">Administracja Serwisu dokłada wszelkich starań, aby
+              przetwarzane dane były:</b> <br>
 
-          [Twoje imię i nazwisko lub nazwa firmy] dokłada szczególnej staranności, aby respektować prywatność
-          Użytkowników odwiedzających nasz Serwis. Podjęte zostały wszelkie niezbędne środki, aby chronić interesy osób,
-          których dane dotyczą.
+            - zgodne z prawem, <br>
+            - zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi
+            celami, <br>
+            - merytorycznie poprawne i adekwatne w stosunku do celów, w jakich są przetwarzane, <br>
+            - przechowywane w postaci umożliwiającej identyfikację osób, których dotyczą, nie dłużej niż jest to
+            niezbędne
+            do osiągnięcia celu przetwarzania. <br>
+            - Liras nie udostępnia zebranych danych osobowych innym podmiotom, chyba że
+            uzyska zgodę użytkownika lub będzie to wymagane przez obowiązujące przepisy prawa.
+            <br><br>
+            Liras może być zobowiązane do udostępnienia informacji zebranych przez
+            Serwis upoważnionym organom na podstawie zgodnych z prawem żądań w zakresie wynikającym z żądania.
+            <br><br>
+            <b class="text-info text-decoration-underline">Bezpieczeństwo danych:</b> <br>
 
-          Definicje
+            - Dostęp do danych osobowych mają jedynie upoważnieni pracownicy Liras. <br>
 
-          Serwis – serwis internetowy dostępny pod adresem [adres URL], prowadzony przez [Twoje imię i nazwisko lub
-          nazwa firmy].
-          Użytkownik – osoba korzystająca z Serwisu.
-          Dane osobowe – oznaczają informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby
-          fizycznej (np. imię i nazwisko, adres e-mail, numer telefonu).
-          Podstawowe zasady
+            - Dane osobowe przechowywane są na zabezpieczonych serwerach.
+            <br><br>
+            <h4>Cele przetwarzania danych</h4>
+            <br>
+            <b class="text-info text-decoration-underline">Liras przetwarza dane użytkowników w celu:</b> <br>
 
-          Administracja Serwisu dokłada wszelkich starań, aby przetwarzane dane były:
+            - świadczenia usług prowadzonych w Serwisie, <br>
+            - dostosowania treści wyświetlanych Użytkownikowi, w tym treści zawierających oznaczenia lokalizacyjne,
+            realizacji zamówień. <br>
+            - Liras podejmuje działania mające na celu ochronę danych osobowych przed
+            dostępem osób nieupoważnionych. <br>
+            <br><br>
+            <h4>Pliki "cookies"</h4> <br>
 
-          zgodne z prawem,
-          zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi
-          celami,
-          merytorycznie poprawne i adekwatne w stosunku do celów, w jakich są przetwarzane,
-          przechowywane w postaci umożliwiającej identyfikację osób, których dotyczą, nie dłużej niż jest to niezbędne
-          do osiągnięcia celu przetwarzania.
-          [Twoje imię i nazwisko lub nazwa firmy] nie udostępnia zebranych danych osobowych innym podmiotom, chyba że
-          uzyska zgodę użytkownika lub będzie to wymagane przez obowiązujące przepisy prawa.
+            Serwis korzysta z plików "cookies". <br>
 
-          [Twoje imię i nazwisko lub nazwa firmy] może być zobowiązane do udostępnienia informacji zebranych przez
-          Serwis upoważnionym organom na podstawie zgodnych z prawem żądań w zakresie wynikającym z żądania.
+            Pliki "cookies" (tzw. ciasteczka) stanowią dane informatyczne, zwłaszcza pliki tekstowe, które przechowywane
+            są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze stron internetowych
+            Serwisu.
+            "Cookies" zazwyczaj zawierają nazwę strony internetowej, z której pochodzą, czas przechowywania ich na
+            urządzeniu końcowym oraz unikalny numer.
+            <br>
+            Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu pliki "cookies" oraz uzyskującym do
+            nich
+            dostęp jest operator Serwisu.
+            <br><br>
+            <b class="text-info text-decoration-underline">Pliki "cookies" wykorzystywane są w celu:</b> <br>
 
-          Bezpieczeństwo danych
+            - dostosowania zawartości stron internetowych Serwisu do preferencji Użytkownika oraz optymalizacji
+            korzystania
+            ze stron internetowych; w szczególności pliki te pozwalają rozpoznać urządzenie Użytkownika Serwisu i
+            odpowiednio wyświetlić stronę internetową, dostosowaną do jego indywidualnych potrzeb,
+            tworzenia statystyk, które pomagają zrozumieć, w jaki sposób Użytkownicy Serwisu korzystają ze stron
+            internetowych, co umożliwia ulepszanie ich struktury i zawartości. <br>
+            - W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików "cookies": "sesyjne" (session cookies) oraz
+            "stałe" (persistent cookies). Cookies "sesyjne" są plikami tymczasowymi, które przechowywane są w urządzeniu
+            końcowym Użytkownika do czasu wylogowania, opuszczenia strony internetowej lub wyłączenia oprogramowania
+            (przeglądarki internetowej). "Stałe" pliki "cookies" przechowywane są w urządzeniu końcowym Użytkownika
+            przez
+            czas określony w parametrach plików "cookies" lub do czasu ich usunięcia przez Użytkownika.
+            <br><br>
+            Oprogramowanie do przeglądania stron internetowych (przeglądarka internetowa) zazwyczaj domyślnie dopuszcza
+            przechowywanie plików "cookies" w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany
+            ustaw.
+          </div>
+          <div class="modal-footer">
 
-          Dostęp do danych osobowych mają jedynie upoważnieni pracownicy [Twoje imię i nazwisko lub nazwa firmy].
-
-          Dane osobowe przechowywane są na zabezpieczonych serwerach.
-
-          Cele przetwarzania danych
-
-          [Twoje imię i nazwisko lub nazwa firmy] przetwarza dane użytkowników w celu:
-
-          świadczenia usług prowadzonych w Serwisie,
-          dostosowania treści wyświetlanych Użytkownikowi, w tym treści zawierających oznaczenia lokalizacyjne,
-          realizacji zamówień.
-          [Twoje imię i nazwisko lub nazwa firmy] podejmuje działania mające na celu ochronę danych osobowych przed
-          dostępem osób nieupoważnionych.
-
-          Pliki "cookies"
-
-          Serwis korzysta z plików "cookies".
-
-          Pliki "cookies" (tzw. ciasteczka) stanowią dane informatyczne, zwłaszcza pliki tekstowe, które przechowywane
-          są w urządzeniu końcowym Użytkownika Serwisu i przeznaczone są do korzystania ze stron internetowych Serwisu.
-          "Cookies" zazwyczaj zawierają nazwę strony internetowej, z której pochodzą, czas przechowywania ich na
-          urządzeniu końcowym oraz unikalny numer.
-
-          Podmiotem zamieszczającym na urządzeniu końcowym Użytkownika Serwisu pliki "cookies" oraz uzyskującym do nich
-          dostęp jest operator Serwisu.
-
-          Pliki "cookies" wykorzystywane są w celu:
-
-          dostosowania zawartości stron internetowych Serwisu do preferencji Użytkownika oraz optymalizacji korzystania
-          ze stron internetowych; w szczególności pliki te pozwalają rozpoznać urządzenie Użytkownika Serwisu i
-          odpowiednio wyświetlić stronę internetową, dostosowaną do jego indywidualnych potrzeb,
-          tworzenia statystyk, które pomagają zrozumieć, w jaki sposób Użytkownicy Serwisu korzystają ze stron
-          internetowych, co umożliwia ulepszanie ich struktury i zawartości.
-          W ramach Serwisu stosowane są dwa zasadnicze rodzaje plików "cookies": "sesyjne" (session cookies) oraz
-          "stałe" (persistent cookies). Cookies "sesyjne" są plikami tymczasowymi, które przechowywane są w urządzeniu
-          końcowym Użytkownika do czasu wylogowania, opuszczenia strony internetowej lub wyłączenia oprogramowania
-          (przeglądarki internetowej). "Stałe" pliki "cookies" przechowywane są w urządzeniu końcowym Użytkownika przez
-          czas określony w parametrach plików "cookies" lub do czasu ich usunięcia przez Użytkownika.
-
-          Oprogramowanie do przeglądania stron internetowych (przeglądarka internetowa) zazwyczaj domyślnie dopuszcza
-          przechowywanie plików "cookies" w urządzeniu końcowym Użytkownika. Użytkownicy Serwisu mogą dokonać zmiany
-          ustaw
-        </div>
-        <div class="modal-footer">
-
+          </div>
         </div>
       </div>
     </div>
@@ -644,7 +949,7 @@
           </p>
 
           <p>
-            <a href="#Contact" class="text-white" style="text-decoration: none">Kontakt</a>
+            <a href="#Contact" class="text-white" style="text-decoration: none">Fanarty</a>
           </p>
         </div>
 

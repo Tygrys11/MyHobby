@@ -1,6 +1,7 @@
 .zoomsButtons {
     display: flex;
     justify-content: flex-end; 
+    
     margin: 20px;
 }
 
@@ -15,4 +16,15 @@
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     text-align: right; 
+}
+
+#zoom-in-btn
+{
+    position: fixed;
+    left: 20px;
+}
+
+#zoom-out-btn 
+{
+    position: fixed;
 }

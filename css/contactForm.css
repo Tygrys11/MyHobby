@@ -1,0 +1,88 @@
+.input_container
+{
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(150deg, black, rgb(0, 0, 56));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px cyan;
+    border: 2px solid rgb(0, 143, 143);
+}
+
+.input_container .input-row 
+{
+    margin-bottom: 12px;
+}
+
+.input_container input:not([type="submit"]),
+.input_container textarea
+{
+    width: 100%;
+    margin: 0 0 3px;
+    background: #000000;
+    color: white;
+    box-shadow: 0 0 10px white;
+    padding: 10px 15px;
+    height: 50px;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    outline: 0;
+    transition: all 0.5s ease-out;
+}
+
+.input_container textarea
+{
+    height: 150px;
+    resize: none;
+}
+
+.input_container input:not([type="submit"]):focus,
+.input_container textarea:focus
+{
+    border: 3px solid #2793d2;
+    box-shadow: 0 0 3px #2793d2;
+}
+
+*::-webkit-input-placeholder
+{
+    opacity: 1;
+    color: white;
+}
+
+.input_container input[type="submit"]
+{
+    padding: 10px 30px;
+    font-size: 18px;
+    line-height: 20px;
+    border-radius: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    border: 2px solid gray;
+    box-shadow: 2px 2px 2px gray;
+    transition: all 0.5s ease-out;
+}
+
+.input_container input[type="submit"]:hover
+{
+    background: linear-gradient(darkblue,black,darkblue);
+    color: white;
+}
+
+.input_container input[type="file"]
+{
+    background: linear-gradient(darkblue,black,darkblue);
+}
+
+label.error
+{
+    font-weight: 700;
+    display: block;
+    color: red;
+    font-size: 14px;
+}
