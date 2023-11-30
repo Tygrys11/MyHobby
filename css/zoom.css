@@ -22,9 +22,11 @@
 {
     position: fixed;
     left: 20px;
+    z-index: 1001;
 }
 
 #zoom-out-btn 
 {
     position: fixed;
+    z-index: 1001;
 }
